@@ -59,8 +59,8 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.state.ToggleableState
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.junkfood.seal.App
 import com.junkfood.seal.R
 import com.junkfood.seal.database.DownloadedVideoInfo
@@ -107,7 +107,7 @@ private const val TAG = "VideoListPage"
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun VideoListPage(
-    videoListViewModel: VideoListViewModel = hiltViewModel(), onBackPressed: () -> Unit
+    videoListViewModel: VideoListViewModel = viewModel(), onBackPressed: () -> Unit
 ) {
     val viewState = videoListViewModel.stateFlow.collectAsStateWithLifecycle().value
     val videoListFlow = videoListViewModel.videoListFlow

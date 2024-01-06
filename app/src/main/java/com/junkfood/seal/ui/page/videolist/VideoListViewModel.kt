@@ -1,22 +1,17 @@
 package com.junkfood.seal.ui.page.videolist
 
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.lifecycle.ViewModel
 import com.junkfood.seal.database.DownloadedVideoInfo
 import com.junkfood.seal.util.DatabaseUtil
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.update
-import javax.inject.Inject
 
 private const val TAG = "VideoListViewModel"
 
-@OptIn(ExperimentalMaterialApi::class)
-@HiltViewModel
-class VideoListViewModel @Inject constructor() : ViewModel() {
+class VideoListViewModel : ViewModel() {
 
     private val _mediaInfoFlow = DatabaseUtil.getMediaInfo()
 
